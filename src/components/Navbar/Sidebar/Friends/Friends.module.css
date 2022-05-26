@@ -1,0 +1,14 @@
+.fiends {
+    padding-top: 30px;
+}
+
+.friend {
+    display: flex;
+}
+.friend div {
+    background-color: aqua;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+}
