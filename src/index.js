@@ -1,10 +1,26 @@
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/state';
-import { renderEntrieTree } from './render';
+import store from './redux/redux-store';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
 
-renderEntrieTree(state);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+let renderEntrieTree = (state) => {
+  debugger
+  root.render(
+    <React.StrictMode>
+      <App state={state}  dispatch={store.dispatch.bind(store)} store={store}/>
+    </React.StrictMode>
+  );
+  
+}
+
+
+renderEntrieTree(store.getState());
+store.subscribe(renderEntrieTree);
 
 
 // If you want to start measuring performance in your app, pass a function
